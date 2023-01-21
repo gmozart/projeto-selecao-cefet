@@ -6,27 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "funcionarios")
-public class Funcionario {
+@Table(name = "funcoes")
+public class Funcao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    private String nome;
+    private String nomeFuncao;
 
-    @OneToOne
-    private Funcao funcao;
+    private Double salario;
 
-    @Temporal(TemporalType.DATE)
-    private LocalDateTime dataContratacao;
+    private Double beneficio;
+
 
 
 }
