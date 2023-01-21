@@ -25,7 +25,6 @@ public class Funcionario {
     @OneToOne
     private Funcao funcao;
 
-    @Temporal(TemporalType.DATE)
     private LocalDateTime dataContratacao;
 
 
