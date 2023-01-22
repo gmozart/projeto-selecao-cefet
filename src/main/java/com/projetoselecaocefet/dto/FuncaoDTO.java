@@ -1,6 +1,8 @@
 package com.projetoselecaocefet.dto;
 
 import com.projetoselecaocefet.entity.Funcao;
+import com.projetoselecaocefet.entity.Salario;
+import com.projetoselecaocefet.enums.BeneficioEnum;
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,9 +18,9 @@ public class FuncaoDTO {
 
     private String nomeFuncao;
 
-    private Double salario;
+    private Salario salario;
 
-    private Double beneficio;
+    private BeneficioEnum beneficio;
 
     public static FuncaoDTO of(Funcao funcao){
         return FuncaoDTO.builder()

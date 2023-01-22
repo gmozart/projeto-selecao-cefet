@@ -1,11 +1,14 @@
 package com.projetoselecaocefet.enums;
 
+
+
 public enum BeneficioEnum {
 
 
-    BENEFICIO(1,"20%"),
-    BENEFICIO_VENDA(2,"30% sobre o valor vendido"),
-    SEMBENEFICIO(3,"Não tem benefícios");
+    SEMBENEFICIO(1,"Não tem benefícios"),
+    BENEFICIO(2,"20%"),
+    BENEFICIO_VENDA(3,"30% sobre o valor vendido");
+
 
     private int cod;
 

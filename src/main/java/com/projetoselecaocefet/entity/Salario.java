@@ -16,6 +16,6 @@ public class Salario {
 
     private double salario;
 
-    private double ValorPorAnoServico;
+    private double valorPorAnoServico;
 
 }

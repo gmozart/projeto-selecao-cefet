@@ -23,12 +23,8 @@ public class Funcao {
     @Column(unique=true)
     private String nomeFuncao;
 
+    @Embedded
     private Salario salario;
 
-    private Double anoServico;
-
     private BeneficioEnum beneficio;
-
-
-
 }
