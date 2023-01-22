@@ -1,5 +1,6 @@
 package com.projetoselecaocefet.entity;
 
+import com.projetoselecaocefet.enums.BeneficioEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,11 +20,14 @@ public class Funcao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique=true)
     private String nomeFuncao;
 
-    private Double salario;
+    private Salario salario;
 
-    private Double beneficio;
+    private Double anoServico;
+
+    private BeneficioEnum beneficio;
 
 
 
