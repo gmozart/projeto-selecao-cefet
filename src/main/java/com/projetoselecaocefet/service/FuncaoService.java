@@ -15,7 +15,7 @@ public class FuncaoService {
     private final FuncaoRepository funcaoRepository;
 
 
-    public void save(FuncaoDTO funcaoDTO){
+    public void salvar(FuncaoDTO funcaoDTO){
         funcaoRepository.save(FuncaoDTO.of(funcaoDTO));
     }
 
@@ -24,7 +24,7 @@ public class FuncaoService {
         return FuncaoDTO.of(funcaoRepository.findById(id));
     }
 
-    public Optional<FuncaoDTO> update(Long id, FuncaoDTO funcaoDTO){
+    public Optional<FuncaoDTO> atualizar(Long id, FuncaoDTO funcaoDTO){
         funcaoDTO.setId(id);
         return Optional.of(FuncaoDTO.of(funcaoRepository.save(FuncaoDTO.of(funcaoDTO))));
     }

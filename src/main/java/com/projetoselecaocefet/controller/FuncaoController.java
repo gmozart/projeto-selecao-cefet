@@ -19,7 +19,7 @@ public class FuncaoController {
 
     @PostMapping
     public ResponseEntity<FuncaoDTO> save(@RequestBody FuncaoDTO funcaoDTO){
-        funcaoService.save(funcaoDTO);
+        funcaoService.salvar(funcaoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
@@ -30,7 +30,7 @@ public class FuncaoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<FuncaoDTO> update(@RequestBody FuncaoDTO funcaoDTO,@PathVariable Long id){
-        return ResponseEntity.ok(funcaoService.update(id,funcaoDTO).orElseThrow());
+        return ResponseEntity.ok(funcaoService.atualizar(id,funcaoDTO).orElseThrow());
     }
 
 }

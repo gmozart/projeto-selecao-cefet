@@ -22,7 +22,6 @@ public class Funcionario {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
     private Funcao funcao;
 
     private String nome;
