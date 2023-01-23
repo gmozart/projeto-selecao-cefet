@@ -5,6 +5,7 @@ import com.projetoselecaocefet.entity.Funcionario;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -16,9 +17,12 @@ public class FuncionarioDTO {
 
     private long id;
 
+    private Funcao funcao;
+
     private String nome;
 
-    private LocalDateTime dataContratacao;
+    private LocalDate dataContratacao;
+
 
     public static FuncionarioDTO of(Funcionario funcionario){
         return FuncionarioDTO.builder()

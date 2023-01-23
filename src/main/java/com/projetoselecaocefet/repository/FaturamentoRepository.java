@@ -1,9 +1,9 @@
 package com.projetoselecaocefet.repository;
 
-import com.projetoselecaocefet.entity.RegistroVendas;
+import com.projetoselecaocefet.entity.Faturamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RegistroVendasRepository extends JpaRepository<RegistroVendas, Long> {
+public interface FaturamentoRepository extends JpaRepository<Faturamento, Long> {
 }

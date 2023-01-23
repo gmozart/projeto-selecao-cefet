@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Data
 @Entity
@@ -26,7 +27,7 @@ public class Funcionario {
 
     private String nome;
 
-    private LocalDateTime dataContratacao;
+    private LocalDate dataContratacao;
 
 
 }

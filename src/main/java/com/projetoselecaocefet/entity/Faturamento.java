@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -14,14 +16,18 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "vendas")
-public class RegistroVendas {
+public class Faturamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime mesVenda;
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Funcionario funcionario;
 
-    private Double valorVendas;
+    private BigDecimal faturamentoMensal;
+
+    private LocalDate dataFaturamento;
 
 }
