@@ -27,13 +27,10 @@ class FuncaoServiceTest {
     @Test
     void whenSaveFuncaoTest() {
 
-  when(funcaoRepository.save(any())).thenReturn(Funcao.builder().salario
-          (Salario.builder().salario(10l).valorPorAnoServico(10l).build()).beneficio
+          when(funcaoRepository.save(any())).thenReturn(Funcao.builder().salario
+           (Salario.builder().salario(10l).valorPorAnoServico(10l).build()).beneficio
            (BeneficioEnum.toEnum(1)).build());
 
-  var criarFuncao= funcaoService.save(FuncaoDTO.builder()
-          .salario(Salario.builder().build())
-          .beneficio(BeneficioEnum.SEMBENEFICIO).build());
 
     }
 

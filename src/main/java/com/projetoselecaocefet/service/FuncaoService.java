@@ -29,7 +29,9 @@ public class FuncaoService {
         return Optional.of(FuncaoDTO.of(funcaoRepository.save(FuncaoDTO.of(funcaoDTO))));
     }
 
-
+    public void delete(Long id){
+        funcaoRepository.deleteById(id);
+    }
 
 
 }

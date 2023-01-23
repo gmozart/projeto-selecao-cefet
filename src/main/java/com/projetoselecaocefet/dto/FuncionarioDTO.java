@@ -18,15 +18,12 @@ public class FuncionarioDTO {
 
     private String nome;
 
-    private Funcao funcao;
-
     private LocalDateTime dataContratacao;
 
     public static FuncionarioDTO of(Funcionario funcionario){
         return FuncionarioDTO.builder()
                 .id(funcionario.getId())
                 .nome(funcionario.getNome())
-                .funcao(funcionario.getFuncao())
                 .dataContratacao(funcionario.getDataContratacao())
                 .build();
     }
@@ -35,7 +32,6 @@ public class FuncionarioDTO {
         return Funcionario.builder()
                 .id(funcionarioDTO.getId())
                 .nome(funcionarioDTO.getNome())
-                .funcao(funcionarioDTO.getFuncao())
                 .dataContratacao(funcionarioDTO.getDataContratacao())
                 .build();
     }

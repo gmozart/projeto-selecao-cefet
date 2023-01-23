@@ -20,7 +20,8 @@ public class Funcao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true)
+    @OneToMany
+    @JoinColumn()
     private String nomeFuncao;
 
     @Embedded

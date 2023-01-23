@@ -17,8 +17,6 @@ public class RegistroVendasDTO {
 
     private Long id;
 
-    private Funcionario funcionario;
-
     private LocalDateTime mesVenda;
 
     private Double valorVendas;
@@ -26,7 +24,6 @@ public class RegistroVendasDTO {
     public static RegistroVendasDTO of(RegistroVendas registroVendas){
         return RegistroVendasDTO.builder()
                 .id(registroVendas.getId())
-                .funcionario(registroVendas.getFuncionario())
                 .mesVenda(registroVendas.getMesVenda())
                 .valorVendas(registroVendas.getValorVendas())
                 .build();
@@ -35,7 +32,6 @@ public class RegistroVendasDTO {
     public static RegistroVendas of(RegistroVendasDTO registroVendasDTO){
         return RegistroVendas.builder()
                 .id(registroVendasDTO.getId())
-                .funcionario(registroVendasDTO.getFuncionario())
                 .mesVenda(registroVendasDTO.getMesVenda())
                 .valorVendas(registroVendasDTO.getValorVendas())
                 .build();

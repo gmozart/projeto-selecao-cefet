@@ -20,9 +20,6 @@ public class RegistroVendas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    private Funcionario funcionario;
-
     private LocalDateTime mesVenda;
 
     private Double valorVendas;

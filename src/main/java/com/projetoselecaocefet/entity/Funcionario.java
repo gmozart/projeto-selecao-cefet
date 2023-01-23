@@ -22,9 +22,6 @@ public class Funcionario {
 
     private String nome;
 
-    @OneToOne
-    private Funcao funcao;
-
     private LocalDateTime dataContratacao;
 
 

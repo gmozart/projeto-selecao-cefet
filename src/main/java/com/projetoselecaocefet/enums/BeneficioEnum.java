@@ -7,7 +7,7 @@ public enum BeneficioEnum {
 
     SEMBENEFICIO(1,"Não tem benefícios"),
     BENEFICIO(2,"20%"),
-    BENEFICIO_VENDA(3,"30% sobre o valor vendido");
+    BENEFICIO_POR_VENDA(3,"30% sobre o valor vendido");
 
 
     private int cod;
