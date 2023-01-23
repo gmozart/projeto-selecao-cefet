@@ -1,12 +1,13 @@
 package com.projetoselecaocefet.entity;
 
-import com.projetoselecaocefet.enums.BeneficioEnum;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -21,11 +22,11 @@ public class Funcao {
     private Long id;
 
     @OneToMany
-    @JoinColumn()
-    private String nomeFuncao;
+    private String cargo;
 
-    @Embedded
-    private Salario salario;
+    private BigDecimal salario;
 
-    private BeneficioEnum beneficio;
+    private BigDecimal adicionalAnual;
+
+    private int beneficio;
 }

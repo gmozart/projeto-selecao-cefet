@@ -20,6 +20,10 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Funcao funcao;
+
     private String nome;
 
     private LocalDateTime dataContratacao;

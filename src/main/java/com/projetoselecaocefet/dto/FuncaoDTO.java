@@ -1,11 +1,11 @@
 package com.projetoselecaocefet.dto;
 
 import com.projetoselecaocefet.entity.Funcao;
-import com.projetoselecaocefet.entity.Salario;
-import com.projetoselecaocefet.enums.BeneficioEnum;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -16,17 +16,20 @@ public class FuncaoDTO {
 
     private Long id;
 
-    private String nomeFuncao;
+    private String cargo;
 
-    private Salario salario;
+    private BigDecimal salario;
 
-    private BeneficioEnum beneficio;
+    private BigDecimal adicionalAnual;
+
+    private int beneficio;
 
     public static FuncaoDTO of(Funcao funcao){
         return FuncaoDTO.builder()
                 .id(funcao.getId())
-                .nomeFuncao(funcao.getNomeFuncao())
+                .cargo(funcao.getCargo())
                 .salario(funcao.getSalario())
+                .adicionalAnual(funcao.getAdicionalAnual())
                 .beneficio(funcao.getBeneficio())
                 .build();
     }
@@ -34,8 +37,9 @@ public class FuncaoDTO {
     public static  Funcao of(FuncaoDTO funcaoDTO){
         return Funcao.builder()
                 .id(funcaoDTO.getId())
-                .nomeFuncao(funcaoDTO.getNomeFuncao())
+                .cargo(funcaoDTO.getCargo())
                 .salario(funcaoDTO.getSalario())
+                .adicionalAnual(funcaoDTO.getAdicionalAnual())
                 .beneficio(funcaoDTO.getBeneficio())
                 .build();
     }
