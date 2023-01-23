@@ -21,7 +21,6 @@ public class Funcao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
     private String cargo;
 
     private BigDecimal salario;

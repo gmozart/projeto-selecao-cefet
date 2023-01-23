@@ -23,7 +23,6 @@ public class Faturamento {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
     private Funcionario funcionario;
 
     private BigDecimal faturamentoMensal;
