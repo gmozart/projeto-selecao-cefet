@@ -4,7 +4,6 @@ import com.projetoselecaocefet.entity.Funcao;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.OneToMany;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;

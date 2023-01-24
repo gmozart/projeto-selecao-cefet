@@ -20,7 +20,7 @@ public class FuncionarioService {
         funcionarioRepository.save(FuncionarioDTO.of(funcionarioDTO));
     }
 
-    public Optional<FuncionarioDTO> buscarPorId(Long id){
+    public Optional<FuncionarioDTO> consultaId(Long id){
         return FuncionarioDTO.of(funcionarioRepository.findById(id));
    }
 
