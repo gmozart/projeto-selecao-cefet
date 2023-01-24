@@ -22,7 +22,7 @@ public class FaturamentoService {
         return FaturamentoDTO.of(faturamentoRepository.findById(id));
     }
 
-    public Optional<List<FaturamentoDTO>> lsitarTodos(){
+    public Optional<List<FaturamentoDTO>> listarTodos(){
         return Optional.of(FaturamentoDTO.of(faturamentoRepository.findAll()));
     }
 

@@ -25,7 +25,7 @@ public class FuncaoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<FuncaoDTO> buscarPorId(@PathVariable Long id){
+    public ResponseEntity<FuncaoDTO> consultaId(@PathVariable Long id){
       return ResponseEntity.ok(funcaoService.consultaId(id).orElseThrow());
     }
 
@@ -35,8 +35,14 @@ public class FuncaoController {
     }
 
     @GetMapping("/listar")
-    public ResponseEntity<List<FuncaoDTO>> buscarTodos(){
+    public ResponseEntity<List<FuncaoDTO>> listarTodos(){
         return  ResponseEntity.ok(funcaoService.listarTodos().orElseThrow());
+    }
+
+    @DeleteMapping("/id")
+    public ResponseEntity<Void> deletar(Long id){
+        funcaoService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
