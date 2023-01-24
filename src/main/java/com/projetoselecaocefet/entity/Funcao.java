@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "funcoes")
+@Table(name = "funcao", schema = "PUBLIC")
 public class Funcao {
 
     @Id
