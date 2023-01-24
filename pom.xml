@@ -11,7 +11,7 @@
 	<groupId>com</groupId>
 	<artifactId>projeto-selecao-cefet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>projeto-selecao-cefet</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
