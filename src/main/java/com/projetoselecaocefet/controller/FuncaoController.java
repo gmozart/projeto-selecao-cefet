@@ -24,19 +24,9 @@ public class FuncaoController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<FuncaoDTO> consultaId(@PathVariable Long id){
-      return ResponseEntity.ok(funcaoService.consultaId(id).orElseThrow());
-    }
-
     @PutMapping("/{id}")
     public ResponseEntity<FuncaoDTO> atualizar(@RequestBody FuncaoDTO funcaoDTO,@PathVariable Long id){
         return ResponseEntity.ok(funcaoService.atualizar(id,funcaoDTO).orElseThrow());
-    }
-
-    @GetMapping("/listar")
-    public ResponseEntity<List<FuncaoDTO>> listarTodos(){
-        return  ResponseEntity.ok(funcaoService.listarTodos().orElseThrow());
     }
 
     @DeleteMapping("/id")
@@ -44,5 +34,18 @@ public class FuncaoController {
         funcaoService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<FuncaoDTO> consultaId(@PathVariable Long id){
+      return ResponseEntity.ok(funcaoService.consultaId(id).orElseThrow());
+    }
+
+
+
+    @GetMapping("/listar")
+    public ResponseEntity<List<FuncaoDTO>> listarTodos(){
+        return  ResponseEntity.ok(funcaoService.listarTodos().orElseThrow());
+    }
+
 
 }

@@ -26,6 +26,7 @@ public class FuncionarioDTO {
     public static FuncionarioDTO of(Funcionario funcionario){
         return FuncionarioDTO.builder()
                 .id(funcionario.getId())
+                .funcao(funcionario.getFuncao())
                 .nome(funcionario.getNome())
                 .dataContratacao(funcionario.getDataContratacao())
                 .build();
@@ -34,6 +35,7 @@ public class FuncionarioDTO {
     public static Funcionario of(FuncionarioDTO funcionarioDTO){
         return Funcionario.builder()
                 .id(funcionarioDTO.getId())
+                .funcao(funcionarioDTO.getFuncao())
                 .nome(funcionarioDTO.getNome())
                 .dataContratacao(funcionarioDTO.getDataContratacao())
                 .build();

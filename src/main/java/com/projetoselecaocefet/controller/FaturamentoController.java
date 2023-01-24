@@ -23,6 +23,17 @@ public class FaturamentoController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<FaturamentoDTO> atualizar(@PathVariable Long id, @RequestBody FaturamentoDTO faturamentoDTO){
+        return ResponseEntity.ok(faturamentoService.atualizar(id, faturamentoDTO).orElseThrow());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id){
+        faturamentoService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping("/id")
     public ResponseEntity<FaturamentoDTO> consultaId(@PathVariable Long id){
         return ResponseEntity.ok(faturamentoService.consultaId(id).orElseThrow());
@@ -32,18 +43,5 @@ public class FaturamentoController {
     public ResponseEntity<List<FaturamentoDTO>> buscarTodos(){
         return ResponseEntity.ok(faturamentoService.listarTodos().orElseThrow());
     }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<FaturamentoDTO> atualizar(@PathVariable Long id, @RequestBody FaturamentoDTO faturamentoDTO){
-        return ResponseEntity.ok(faturamentoService.atualizar(id, faturamentoDTO).orElseThrow());
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
-        faturamentoService.delete(id);
-        return ResponseEntity.noContent().build();
-    }
-
-
 
 }

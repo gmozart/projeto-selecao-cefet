@@ -8,7 +8,6 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,6 +27,7 @@ public class FaturamentoDTO {
     public static FaturamentoDTO of(Faturamento faturamento){
         return FaturamentoDTO.builder()
                 .id(faturamento.getId())
+                .funcionario(faturamento.getFuncionario())
                 .faturamentoMensal(faturamento.getFaturamentoMensal())
                 .dataFaturamento(faturamento.getDataFaturamento())
                 .build();
@@ -36,17 +36,18 @@ public class FaturamentoDTO {
     public static Faturamento of(FaturamentoDTO faturamentoDTO){
         return Faturamento.builder()
                 .id(faturamentoDTO.getId())
+                .funcionario(faturamentoDTO.getFuncionario())
                 .faturamentoMensal(faturamentoDTO.getFaturamentoMensal())
                 .dataFaturamento(faturamentoDTO.getDataFaturamento())
                 .build();
     }
 
-    public static Optional<FaturamentoDTO> of(Optional<Faturamento> registroVendas){
-        return registroVendas.stream().map(FaturamentoDTO::of).findAny();
+    public static Optional<FaturamentoDTO> of(Optional<Faturamento> faturamento){
+        return faturamento.stream().map(FaturamentoDTO::of).findAny();
     }
 
-    public static List<FaturamentoDTO> of(List<Faturamento> registroVendas){
-        return registroVendas.stream().map(FaturamentoDTO::of).collect(Collectors.toList());
+    public static List<FaturamentoDTO> of(List<Faturamento> faturamento){
+        return faturamento.stream().map(FaturamentoDTO::of).collect(Collectors.toList());
     }
 
 }
