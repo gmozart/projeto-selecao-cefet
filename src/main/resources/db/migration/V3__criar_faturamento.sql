@@ -1,0 +1,21 @@
+CREATE TABLE PUBLIC.faturamento (
+     id INT PRIMARY KEY NOT NULL,
+     funcionario_id INT NOT NULL,
+     faturamentoMensal DECIMAL NOT NULL,
+     dataFaturamento DATE NOT NULL,
+     FOREIGN KEY (funcionario_id) REFERENCES funcionario(id)
+);
+
+-- FATURAMENTO VENDEDOR ANA SILVA
+INSERT INTO faturamento VALUES(1, 3, 5200, '01-12-2021');
+INSERT INTO faturamento VALUES(2, 3, 4000, '01-01-2022');
+INSERT INTO faturamento VALUES(3, 3, 4200, '01-02-2022');
+INSERT INTO faturamento VALUES(4, 3, 5850, '01-03-2022');
+INSERT INTO faturamento VALUES(5, 3, 7000, '01-04-2022');
+
+-- FATURAMENTO VENDEDOR JOÃO MENDES
+INSERT INTO faturamento VALUES(6, 4, 3400, '01-12-2021');
+INSERT INTO faturamento VALUES(7, 4, 7700, '01-01-2022');
+INSERT INTO faturamento VALUES(8, 4, 5000, '01-02-2022');
+INSERT INTO faturamento VALUES(9, 4, 5900, '01-03-2022');
+INSERT INTO faturamento VALUES(10, 4, 6500, '01-04-2022');

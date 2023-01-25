@@ -42,4 +42,9 @@ public class FuncionarioController {
     public ResponseEntity<List<FuncionarioDTO>> listarTodos(){
         return ResponseEntity.ok(funcionarioService.listarTodos().orElseThrow());
     }
+
+    @GetMapping("/valorTotal")
+    public ResponseEntity<List<Long>> listarValorTotalPagoNoMes() {
+        return ResponseEntity.ok(funcionarioService.listarValorTotalPagoNoMes().orElseThrow());
+    }
 }

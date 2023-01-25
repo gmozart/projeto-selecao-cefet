@@ -4,6 +4,7 @@ import com.projetoselecaocefet.dto.FuncaoDTO;
 import com.projetoselecaocefet.dto.FuncionarioDTO;
 import com.projetoselecaocefet.repository.FuncionarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -28,6 +29,10 @@ public class FuncionarioService {
 
    public Optional<List<FuncionarioDTO>> listarTodos(){
         return Optional.of(FuncionarioDTO.of(funcionarioRepository.findAll()));
+   }
+
+   public Optional<List<Long>> listarValorTotalPagoNoMes() {
+        return funcionarioRepository.listarValorTotalPagoNoMes();
    }
 
    public Optional<FuncionarioDTO> atualizar(Long id, FuncionarioDTO funcionarioDTO){
